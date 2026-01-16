@@ -28,31 +28,72 @@
         }
 
         h1, h2, h3 { font-family: var(--font-head); color: var(--primary-green); font-weight: 700; }
-        /* Updated paragraph style for better readability */
         p { font-size: 1.1rem; margin-bottom: 15px; color: var(--text-body); font-weight: 400; }
 
-        /* --- HEADER --- */
+        /* --- ATTRACTIVE HEADER (As Requested) --- */
         header {
             background: white;
             padding: 15px 5%;
             position: sticky; top: 0; z-index: 1000;
             display: flex; justify-content: space-between; align-items: center;
-            border-bottom: 3px solid var(--accent-gold);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-bottom: 4px solid var(--accent-gold);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
 
-        .logo-section { display: flex; align-items: center; gap: 15px; }
-        .logo-section img { height: 60px; }
-        .brand-info { display: flex; flex-direction: column; }
-        .brand-name { font-family: var(--font-head); font-size: 1.6rem; color: var(--primary-green); line-height: 1; }
-        .brand-details { font-size: 0.9rem; color: var(--text-dark); font-weight: 700; margin-top: 4px; }
-        
-        .book-btn {
-            background: linear-gradient(45deg, var(--primary-green), #004225);
-            color: white; padding: 12px 30px; border-radius: 50px; text-decoration: none;
-            font-weight: bold; box-shadow: 0 5px 15px rgba(0,91,62,0.2); transition: transform 0.3s;
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
-        .book-btn:hover { transform: translateY(-2px); background: var(--accent-gold); }
+
+        .logo-section img {
+            height: 65px; /* Bigger Logo */
+            filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.1));
+        }
+
+        .brand-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-name {
+            font-family: var(--font-head);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            line-height: 1.1;
+        }
+
+        .brand-details {
+            font-size: 0.9rem;
+            color: #555;
+            font-weight: 600;
+            margin-top: 4px;
+        }
+
+        .brand-details span {
+            color: var(--accent-gold);
+            margin: 0 5px;
+        }
+
+        /* Stylish Book Button */
+        .book-btn {
+            background: linear-gradient(45deg, var(--primary-green), #004d33);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0, 91, 62, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: inline-block;
+        }
+        .book-btn:hover { 
+            transform: translateY(-3px); 
+            box-shadow: 0 6px 15px rgba(0, 91, 62, 0.4);
+            background: linear-gradient(45deg, var(--accent-gold), #b8962e);
+            color: #fff;
+        }
 
         /* --- HERO --- */
         .hero {
@@ -64,7 +105,6 @@
         }
         .hero h1 { font-size: 3.8rem; color: var(--accent-gold); text-shadow: 2px 2px 5px rgba(0,0,0,0.8); margin-bottom: 5px;}
         
-        /* New Services Highlight */
         .hero-services {
             font-size: 1.3rem; font-weight: 700; color: white; 
             text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px;
@@ -79,7 +119,6 @@
         
         .text-block { max-width: 900px; margin: 0 auto 50px auto; text-align: left; }
         .text-block h3 { font-size: 1.6rem; margin-top: 30px; margin-bottom: 15px; color: var(--accent-gold); }
-        /* Strong tags made darker */
         .text-block strong { color: var(--text-dark); font-weight: 700; }
 
         /* --- PHOTO GRIDS (4 Images) --- */
@@ -101,7 +140,7 @@
         iframe { width: 100%; height: 450px; display: block; border: 0; }
 
         footer { background: var(--primary-green); color: white; text-align: center; padding: 60px 20px; }
-        footer p { color: white; } /* Ensure footer text stays white */
+        footer p { color: white; } 
         .social-btn {
             display: inline-flex; align-items: center; gap: 10px; padding: 12px 25px;
             border-radius: 30px; text-decoration: none; font-weight: bold; margin: 10px;
@@ -111,10 +150,13 @@
 
         /* Mobile */
         @media (max-width: 768px) { 
+            header { flex-direction: column; gap: 15px; text-align: center; padding: 20px; }
+            .logo-section { flex-direction: column; }
             .hero h1 { font-size: 2.8rem; }
             .hero-services { font-size: 1.1rem; }
             .content-section { padding: 50px 5%; }
             .photo-grid { grid-template-columns: 1fr; }
+            .book-btn { width: 100%; text-align: center; }
         }
     </style>
 </head>
@@ -128,14 +170,14 @@
                 <div class="brand-details">Kumily, Kerala <span>|</span> +91 89438 54839</div>
             </div>
         </div>
-        <a href="https://wa.me/918943854839" class="book-smallbtn">Book Now</a>
+        <a href="https://wa.me/918943854839" class="book-btn">Book Your Class</a>
     </header>
 
     <section class="hero">
         <div>
             <h1>The Authentic Taste of Kerala</h1>
             <p class="hero-services">
-                Cooking Class &nbsp;|&nbsp; Spice Plantation Visit &nbsp;|&nbsp; Arranged Home Stay
+                Cooking Class  |  Spice Plantation Visit  |  Arranged Home Stay
             </p>
             <p class="hero-tagline">Step Into My Kitchen. Experience Home Cooked Goodness.</p>
         </div>
@@ -194,8 +236,6 @@
             
             <h3>Dining Etiquette</h3>
             <p>Serving food is an act of love. When serving a Sadya, the tapering end of the banana leaf points to the left of the guest. Use of hands is encouraged—it is believed that connecting with food through touch enhances the taste and digestion.</p>
-
-
         </div>
 
         <div class="photo-grid">
@@ -227,5 +267,4 @@
     </footer>
 
 </body>
-
 </html>

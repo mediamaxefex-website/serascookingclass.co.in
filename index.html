@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sera's Cooking Class | Authentic Kerala Cuisine</title>
     <style>
-        /* --- THEME: LUXURY KERALA (High Contrast) --- */
+        /* --- THEME: PREMIUM BLUE & PINK --- */
         :root {
-            --bg-cream: #FFFDF5;       
-            --primary-green: #005b3e;  
-            --accent-gold: #D4AF37;    
-            --text-dark: #000000;      /* Pure Black for headings */
-            --text-body: #222222;      /* Very dark gray for maximum readability */
+            --bg-white: #ffffff;
+            --primary-blue: #0a192f;   /* Deep Royal Navy Blue */
+            --accent-pink: #ff007f;    /* Vibrant Magenta Pink */
+            --text-dark: #172a45;      /* Dark Blue for headings */
+            --text-body: #444444;      /* Dark Grey for reading */
             --font-head: 'Playfair Display', serif;
             --font-body: 'Lato', sans-serif;
         }
@@ -22,141 +22,138 @@
         
         body { 
             font-family: var(--font-body); 
-            background-color: var(--bg-cream); 
+            background-color: var(--bg-white); 
             color: var(--text-body); 
             line-height: 1.8;
         }
 
-        h1, h2, h3 { font-family: var(--font-head); color: var(--primary-green); font-weight: 700; }
+        h1, h2, h3 { font-family: var(--font-head); color: var(--primary-blue); font-weight: 700; }
         p { font-size: 1.1rem; margin-bottom: 15px; color: var(--text-body); font-weight: 400; }
 
-        /* --- ATTRACTIVE HEADER (As Requested) --- */
+        /* --- HEADER --- */
         header {
             background: white;
             padding: 15px 5%;
             position: sticky; top: 0; z-index: 1000;
             display: flex; justify-content: space-between; align-items: center;
-            border-bottom: 4px solid var(--accent-gold);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-bottom: 3px solid var(--accent-pink);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
         }
 
         .logo-section {
-            display: flex;
-            align-items: center;
-            gap: 15px;
+            display: flex; align-items: center; gap: 15px;
+            flex-grow: 0; /* Keeps logo on left */
         }
 
         .logo-section img {
-            height: 65px; /* Bigger Logo */
-            filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.1));
+            height: 65px; 
+            filter: drop-shadow(1px 1px 3px rgba(0,0,0,0.1));
         }
 
-        .brand-info {
-            display: flex;
-            flex-direction: column;
-        }
-
+        .brand-info { display: flex; flex-direction: column; }
         .brand-name {
-            font-family: var(--font-head);
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary-green);
-            line-height: 1.1;
+            font-family: var(--font-head); font-size: 1.8rem;
+            font-weight: 700; color: var(--primary-blue); line-height: 1.1;
         }
-
         .brand-details {
-            font-size: 0.9rem;
-            color: #555;
-            font-weight: 600;
-            margin-top: 4px;
+            font-size: 0.9rem; color: #555; font-weight: 600; margin-top: 4px;
         }
+        .brand-details span { color: var(--accent-pink); margin: 0 5px; }
 
-        .brand-details span {
-            color: var(--accent-gold);
-            margin: 0 5px;
-        }
-
-        /* Stylish Book Button */
+        /* Book Button (Pink Gradient) */
         .book-btn {
-            background: linear-gradient(45deg, var(--primary-green), #004d33);
-            color: white;
-            padding: 12px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            box-shadow: 0 4px 10px rgba(0, 91, 62, 0.3);
-            transition: transform 0.3s, box-shadow 0.3s;
-            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-pink), #c50062);
+            color: white; padding: 12px 35px; border-radius: 50px;
+            text-decoration: none; font-weight: bold;
+            box-shadow: 0 4px 15px rgba(255, 0, 127, 0.3);
+            transition: transform 0.3s;
         }
-        .book-btn:hover { 
-            transform: translateY(-3px); 
-            box-shadow: 0 6px 15px rgba(0, 91, 62, 0.4);
-            background: linear-gradient(45deg, var(--accent-gold), #b8962e);
-            color: #fff;
-        }
+        .book-btn:hover { transform: translateY(-3px); background: var(--primary-blue); }
 
         /* --- HERO --- */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('welcome.png');
+            background: linear-gradient(rgba(10, 25, 47, 0.6), rgba(10, 25, 47, 0.6)), url('welcome.png');
             background-size: cover; background-position: center;
             height: 85vh;
             display: flex; align-items: center; justify-content: center;
             text-align: center; color: white;
         }
-        .hero h1 { font-size: 3.8rem; color: var(--accent-gold); text-shadow: 2px 2px 5px rgba(0,0,0,0.8); margin-bottom: 5px;}
+        .hero h1 { font-size: 3.8rem; color: white; text-shadow: 2px 2px 10px rgba(0,0,0,0.6); margin-bottom: 5px; }
         
         .hero-services {
-            font-size: 1.3rem; font-weight: 700; color: white; 
-            text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px;
-            text-shadow: 1px 1px 3px rgba(0,0,0,1);
+            font-size: 1.2rem; font-weight: 700; color: white; 
+            text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px;
+            background: var(--accent-pink); padding: 8px 15px; border-radius: 4px;
+            display: inline-block; box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
-        .hero-tagline { font-size: 1.5rem; color: #eee; font-weight: 400; }
+        .hero-tagline { font-size: 1.5rem; color: #f0f0f0; font-weight: 400; }
 
-        /* --- CONTENT SECTIONS --- */
+        /* --- SECTIONS --- */
         .content-section { padding: 80px 10%; max-width: 1400px; margin: 0 auto; text-align: center; }
-        .content-section h2 { font-size: 2.8rem; margin-bottom: 30px; color: var(--primary-green); position: relative; display: inline-block; }
-        .content-section h2::after { content: ''; display: block; width: 60px; height: 3px; background: var(--accent-gold); margin: 15px auto 0; }
+        .content-section h2 { font-size: 2.8rem; margin-bottom: 30px; color: var(--primary-blue); position: relative; display: inline-block; }
+        .content-section h2::after { content: ''; display: block; width: 60px; height: 4px; background: var(--accent-pink); margin: 15px auto 0; border-radius: 2px; }
         
         .text-block { max-width: 900px; margin: 0 auto 50px auto; text-align: left; }
-        .text-block h3 { font-size: 1.6rem; margin-top: 30px; margin-bottom: 15px; color: var(--accent-gold); }
-        .text-block strong { color: var(--text-dark); font-weight: 700; }
+        .text-block h3 { font-size: 1.6rem; margin-top: 30px; margin-bottom: 15px; color: var(--accent-pink); }
+        .text-block strong { color: var(--primary-blue); font-weight: 700; }
 
-        /* --- PHOTO GRIDS (4 Images) --- */
+        /* Photo Grid */
         .photo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-bottom: 40px;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px; margin-bottom: 40px;
         }
         .photo-card {
-            background: white; padding: 10px; border-radius: 4px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s;
+            background: white; padding: 10px; border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: transform 0.3s;
+            border-bottom: 4px solid transparent;
         }
-        .photo-card:hover { transform: translateY(-5px); }
-        .photo-card img { width: 100%; height: 320px; object-fit: cover; border-radius: 2px; }
+        .photo-card:hover { transform: translateY(-7px); border-bottom: 4px solid var(--accent-pink); }
+        .photo-card img { width: 100%; height: 320px; object-fit: cover; border-radius: 4px; }
 
-        /* --- MAP & FOOTER --- */
-        .map-section { margin-top: 50px; border-top: 5px solid var(--accent-gold); }
+        /* --- MAP & REVIEWS --- */
+        .map-section { 
+            padding-top: 50px; 
+            background: #f8f9fa; 
+            border-top: 5px solid var(--accent-pink); 
+            text-align: center;
+        }
+        .map-title {
+            font-size: 2.2rem; color: var(--primary-blue); margin-bottom: 30px; font-weight: 700;
+        }
         iframe { width: 100%; height: 450px; display: block; border: 0; }
 
-        footer { background: var(--primary-green); color: white; text-align: center; padding: 60px 20px; }
-        footer p { color: white; } 
+        /* --- FOOTER --- */
+        footer { background: var(--primary-blue); color: white; text-align: center; padding: 60px 20px; }
+        
         .social-btn {
-            display: inline-flex; align-items: center; gap: 10px; padding: 12px 25px;
+            display: inline-flex; align-items: center; gap: 10px; padding: 12px 30px;
             border-radius: 30px; text-decoration: none; font-weight: bold; margin: 10px;
-            background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; transition: 0.3s;
+            background: rgba(255,255,255,0.1); 
+            border: 1px solid rgba(255,255,255,0.2); 
+            color: white; transition: 0.3s;
         }
-        .social-btn:hover { background: white; color: var(--primary-green); transform: translateY(-3px); }
+        .social-btn:hover { background: var(--accent-pink); border-color: var(--accent-pink); transform: translateY(-3px); }
+
+        /* --- FLOATING WHATSAPP BUTTON --- */
+        .float-wa {
+            position: fixed; bottom: 30px; right: 30px;
+            background-color: #25D366; color: white;
+            padding: 15px 25px; border-radius: 50px;
+            font-weight: bold; text-decoration: none;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 2000; transition: transform 0.3s;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .float-wa:hover { transform: scale(1.05); }
 
         /* Mobile */
         @media (max-width: 768px) { 
             header { flex-direction: column; gap: 15px; text-align: center; padding: 20px; }
             .logo-section { flex-direction: column; }
             .hero h1 { font-size: 2.8rem; }
-            .hero-services { font-size: 1.1rem; }
-            .content-section { padding: 50px 5%; }
-            .photo-grid { grid-template-columns: 1fr; }
+            .hero-services { font-size: 0.9rem; }
             .book-btn { width: 100%; text-align: center; }
+            .float-wa { bottom: 20px; right: 20px; padding: 12px 20px; }
         }
     </style>
 </head>
@@ -185,18 +182,14 @@
 
     <section class="content-section">
         <h2>The Flavor of Kerala</h2>
-        
         <div class="text-block">
             <p>Kerala is known as the "Land of Spices" for a reason. Our cuisine is a celebration of the spices that grow right here in our backyard in Kumily.</p>
-            
             <h3>The Spice Bowl</h3>
-            <p>Our food begins with the "King and Queen" of spices—Black Pepper and Cardamom. We also use Cloves, Cinnamon, Nutmeg, and Star Anise to create complex flavor profiles. Unlike other Indian cuisines that might be heavy on cream, Kerala food is light, aromatic, and defined by the use of Coconut (oil, milk, and grated).</p>
-            
+            <p>Our food begins with the "King and Queen" of spices—Black Pepper and Cardamom. We also use Cloves, Cinnamon, Nutmeg, and Star Anise. Unlike other Indian cuisines that might be heavy on cream, Kerala food is light, aromatic, and defined by the use of Coconut.</p>
             <h3>Signature Dishes</h3>
-            <p><strong>The Sadya:</strong> A vegetarian banquet served on a fresh plantain leaf, featuring over 24 dishes ranging from the tangy Sambar and Rasam to the rich, creamy Payasam (dessert).</p>
-            <p><strong>Seafood & Meats:</strong> Our Fish Curry (meen curry) is cooked in an earthen pot with 'Kudampuli' for a distinct tangy taste. The Kerala Chicken Roast and Beef Fry are legendary for their slow-roasted spice blends.</p>
+            <p><strong>The Sadya:</strong> A vegetarian banquet served on a fresh plantain leaf, featuring over 24 dishes ranging from the tangy Sambar to the rich, creamy Payasam.</p>
+            <p><strong>Seafood & Meats:</strong> Our Fish Curry is cooked in an earthen pot with 'Kudampuli' for a distinct tangy taste. The Kerala Chicken Roast and Beef Fry are legendary.</p>
         </div>
-
         <div class="photo-grid">
             <div class="photo-card"><img src="s12.jpeg" alt="Scraping Coconut"></div>
             <div class="photo-card"><img src="s13.jpeg" alt="Traditional Technique"></div>
@@ -205,18 +198,15 @@
         </div>
     </section>
 
-    <section class="content-section" style="background-color: white;">
+    <section class="content-section" style="background-color: #f8f9fa;">
         <h2>Kumily: Gateway to Thekkady</h2>
-        
         <div class="text-block">
             <p>Located in the Idukki district, Kumily is not just a town; it is the gateway to some of India's most stunning natural wonders.</p>
-            
             <h3>Local Attractions</h3>
-            <p><strong>Periyar Tiger Reserve:</strong> Just a stone's throw away, visitors can take a boat safari on Periyar Lake to spot wild elephants, bison, and if lucky, the elusive tiger.</p>
-            <p><strong>Spice Plantations Visit:</strong> A walk here is a sensory experience where you can see, touch, and smell fresh Cardamom, Pepper, Coffee, and Tea growing in the wild.</p>
+            <p><strong>Periyar Tiger Reserve:</strong> Just a stone's throw away, visitors can take a boat safari on Periyar Lake to spot wild elephants and bison.</p>
+            <p><strong>Spice Plantations Visit:</strong> A walk here is a sensory experience where you can see, touch, and smell fresh Cardamom, Pepper, Coffee, and Tea.</p>
             <p><strong>Chellarkovil Viewpoint:</strong> A breathtaking spot offering a panoramic view of the plains of Tamil Nadu and cascading waterfalls.</p>
         </div>
-
         <div class="photo-grid">
             <div class="photo-card"><img src="s3.jpeg" alt="Family Kitchen"></div>
             <div class="photo-card"><img src="s4.jpeg" alt="Learning to Cook"></div>
@@ -227,17 +217,13 @@
 
     <section class="content-section">
         <h2>The Culture of Welcoming</h2>
-        
         <div class="text-block">
             <p>In Kerala, we believe in the Sanskrit phrase <em>Atithi Devo Bhava</em>, which means "The Guest is God."</p>
-            
             <h3>The Warm Welcome</h3>
-            <p>A traditional welcome often involves the lighting of the <em>Nilavilakku</em> (brass lamp) to bring auspiciousness. Guests are greeted with a warm smile and often a glass of Sambharam or tender coconut water.</p>
-            
+            <p>A traditional welcome often involves the lighting of the <em>Nilavilakku</em> (brass lamp). Guests are greeted with a warm smile and often a glass of Sambharam or tender coconut water.</p>
             <h3>Dining Etiquette</h3>
-            <p>Serving food is an act of love. When serving a Sadya, the tapering end of the banana leaf points to the left of the guest. Use of hands is encouraged—it is believed that connecting with food through touch enhances the taste and digestion.</p>
+            <p>Serving food is an act of love. When serving a Sadya, the tapering end of the banana leaf points to the left of the guest. Use of hands is encouraged—it enhances the taste and digestion.</p>
         </div>
-
         <div class="photo-grid">
             <div class="photo-card"><img src="s1.jpeg" alt="The Feast"></div>
             <div class="photo-card"><img src="s2.jpeg" alt="Group Dining"></div>
@@ -247,6 +233,7 @@
     </section>
 
     <div class="map-section">
+        <h2 class="map-title">Location & Reviews</h2>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6679.709682135919!2d77.15619139682138!3d9.618822487444735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b06550023fc1c67%3A0xea585b8bb68f0ca3!2sSera's%20cooking%20class!5e0!3m2!1sen!2sin!4v1768499184710!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 
@@ -257,7 +244,7 @@
         <br>
         
         <div style="margin-bottom: 25px;">
-            <a href="https://wa.me/918943854839" class="social-btn">WhatsApp</a>
+            <a href="https://wa.me/918943854839" class="social-btn">WhatsApp Chat</a>
             <a href="https://www.instagram.com/step_into_my_kitche" class="social-btn">Instagram</a>
         </div>
 
@@ -265,6 +252,11 @@
         <br>
         <p style="font-size: 0.8rem; opacity: 0.7;">© 2026 Sera's Cooking Class Powered By Max Efex</p>
     </footer>
+
+    <a href="https://wa.me/918943854839" class="float-wa">
+        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.596 2.655-.694c.976.547 2.059.839 3.167.839 3.183 0 5.768-2.586 5.769-5.766.001-3.181-2.585-5.767-5.766-5.767zm6.315 5.767c-.001 3.483-2.832 6.314-6.315 6.314-1.071 0-2.105-.28-3.003-.799l-3.351.877.894-3.266c-.604-1.037-1.002-2.196-1.002-3.414 0-3.483 2.832-6.315 6.315-6.315 3.484 0 6.316 2.832 6.316 6.315z"/></svg>
+        Chat on WhatsApp
+    </a>
 
 </body>
 </html>
